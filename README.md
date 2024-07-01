@@ -1,2 +1,2 @@
 # pandas
-Learn PANDAS
+Open Source data analysis library written in Python.
