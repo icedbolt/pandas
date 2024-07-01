@@ -1,0 +1,54 @@
+import numpy as np
+import pandas as pd
+
+dict1 = {
+    "Names": ['Tanmay', 'Abhinav', 'Rohit', 'Ekladki'],
+    "Marks": ['85', '70', '78', '92'],
+    "City": ['Hyderabad', 'Madhubani', 'Patna', 'Pune']
+}
+
+df = pd.DataFrame(dict1)
+
+df
+	Names	  Marks	  City
+0	Tanmay	85	Hyderabad
+1	Abhinav	70	Madhubani
+2	Rohit	  78	Patna
+3	Ekladki	92	Pune
+
+df.to_csv('friends.csv')                                      #save your csv file
+df.to_csv('friends_index_false.csv', index = False)           #save your csv file without index
+
+df.tail(3)                        #last 3 outputs
+	Names	 Marks	City
+1	Abhinav	70	Madhubani
+2	Rohit	  78	Patna
+3	Ekladki	92	Pune
+
+df.head(3)                        #top 3 outputs
+Names	  Marks	City
+0	Tanmay	85	Hyderabad
+1	Abhinav	70	Madhubani
+2	Rohit	  78	Patna
+
+df.describe()
+
+test = pd.read_csv('test.csv')            #read an externally created csv file
+
+test
+  Unnamed: 0	Train No.	Speed	City
+0  	       0	  12455	   150	Hyderabad
+1	         1	  123213	  70	Madhubani
+2	         2 	  123135	  100	Patna
+3	         3	  32154	    92	Pune
+
+test['Speed']
+0    150
+1     70
+2    100
+3     92
+
+test['Speed'][0] = 120                  #modify the existing value
+
+test.to_csv('test.csv')                   #save the modified file
+
