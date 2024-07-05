@@ -1,0 +1,69 @@
+Write a solution to create a DataFrame from a 2D list called student_data. This 2D list contains the IDs and ages of some students.
+
+import pandas as pd
+
+def createDataframe(student_data: List[List[int]]) -> pd.DataFrame:
+    df = pd.DataFrame(student_data)
+    df.columns = ["student_id", "age"]
+    return df
+
+----------------------------------------------------------------------------------------------
+
+Write a solution to calculate and display the number of rows and columns of players.
+import pandas as pd
+
+def getDataframeSize(players: pd.DataFrame) -> List[int]:
+    return [len(players), len(players.columns)]
+
+----------------------------------------------------------------------------------------------
+
+Write a solution to display the first 3 rows of this DataFrame.
+import pandas as pd
+
+def selectFirstRows(employees: pd.DataFrame) -> pd.DataFrame:
+    return employees.iloc[:3]
+
+-------------------------------------------------------------------------------------------------
+
+Write a solution to select the name and age of the student with student_id = 101.
+import pandas as pd
+
+def selectData(students: pd.DataFrame) -> pd.DataFrame:
+    return students.loc[students["student_id"] == 101, ["name", "age"]]
+
+-------------------------------------------------------------------------------------------------
+
+Write a solution to create a new column name bonus that contains the doubled values of the salary column.
+import pandas as pd
+
+def createBonusColumn(employees: pd.DataFrame) -> pd.DataFrame:
+    employees['bonus'] = 2 * employees['salary']
+    return employees
+
+-------------------------------------------------------------------------------------------------------------------------------
+
+Write a solution to remove these duplicate rows and keep only the first occurrence.
+import pandas as pd
+
+def dropDuplicateEmails(customers: pd.DataFrame) -> pd.DataFrame:
+    return customers.drop_duplicates(subset="email")
+
+---------------------------------------------------------------------------------------------------------------------------
+
+Write a solution to remove the rows with missing values.
+import pandas as pd
+
+def dropMissingData(students: pd.DataFrame) -> pd.DataFrame:
+    return students.dropna(subset="name")
+
+------------------------------------------------------------------------------------------------------------------------------
+
+Write a solution to modify the salary column by multiplying each salary by 2.
+import pandas as pd
+
+def modifySalaryColumn(employees: pd.DataFrame) -> pd.DataFrame:
+    employees['salary'] = 2 * employees['salary']
+    return employees
+
+-------------------------------------------------------------------------------------------------------------------------------
+
